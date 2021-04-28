@@ -1,0 +1,29 @@
+<!--htmk doc for base has been defined, now to need to extend it in order to use it-->
+
+{% extends "base.html" %} {% block title %}Home{% endblock %}{% block content %}
+
+<!-- code that generates/shows all of the notes-->
+<h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+    <!-- all notes can be stored for user, as result of for loop and notes field in models.py that notes will be stored in-->
+    {% for note in user.notes %}
+    <li class="list-group-item">{{ note.data }}
+        <!--javascript that sends request to backend to delete note when clicked-->
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+ 
+<!-- allowing notes to be added, form, post request will be sent to url with note-->
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <!-- break line gives space beteween text box and button-->
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+
+    </div>
+    </form>
+{% endblock %}
