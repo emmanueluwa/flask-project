@@ -1,4 +1,4 @@
-# flask make-Notes Project
+# Flask Make-Notes Project
 
 ### Description
 Created a notes app using Flask with Python, HTML and a little JavaScript to help with the interactive side of the application. This project is a simple app that allows the user to sign up and make an account, the user will then be allowed to save notes to their homepage and delete the notes. The application also allows you to log in using the username and password you have created which will be saved to the Database, and the option to logout is also available.
